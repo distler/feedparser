@@ -1,10 +1,12 @@
 feedparser - Parse Atom and RSS feeds in Python.
+================================================
+.. image:: https://travis-ci.org/distler/feedparser.svg?branch=develop
+ :target: https://travis-ci.org/distler/feedparser
 
 | Copyright 2010-2015 Kurt McKee <contactme@kurtmckee.org>
 | Copyright 2002-2008 Mark Pilgrim
 
 feedparser is open source. See the LICENSE file for more information.
-
 
 Installation
 ============
