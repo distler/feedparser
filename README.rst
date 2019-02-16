@@ -1,7 +1,7 @@
 feedparser - Parse Atom and RSS feeds in Python.
 ================================================
 .. image:: https://travis-ci.org/distler/feedparser.svg?branch=develop
- :target: https://travis-ci.org/distler/feedparser
+   :target: https://travis-ci.org/distler/feedparser
 
 | Copyright 2010-2015 Kurt McKee <contactme@kurtmckee.org>
 | Copyright 2002-2008 Mark Pilgrim
@@ -46,3 +46,7 @@ Feedparser has an extensive test suite, powered by tox. To run it, type this::
 
 This will spawn an HTTP server that will listen on port 8097. The tests will
 fail if that port is in use.
+
+This Github Repository is also linked to a `Travis CI build`_, whose status is shown above. Clicking on the icon will show the current status for Pythons 2.7, 3.5, 3.6 and 37.
+
+.. _Travis CI build: https://travis-ci.org/distler/feedparser
