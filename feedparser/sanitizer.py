@@ -362,7 +362,7 @@ class _HTMLSanitizer(_BaseHTMLProcessor):
         style=re.compile(r'url\s*\(\s*[^\s)]+?\s*\)\s*').sub(' ',style)
 
         # gauntlet
-        if not re.match(r"""^([:,;#%.\sa-zA-Z0-9!]|\w-\w|'[\s\w]+'|"[\s\w]+"|\([\d,\s]+\))*$""", style):
+        if not re.match(r"""^([-:,;#%.\sa-zA-Z0-9!]|\w-\w|'[\s\w]+'|"[\s\w]+"|\([\d,\s]+\))*$""", style):
             return ''
         # This replaced a regexp that used re.match and was prone to pathological back-tracking.
         if re.sub(r"\s*[-\w]+\s*:\s*[^:;]*;?", '', style).strip():
