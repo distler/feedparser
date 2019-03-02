@@ -16,7 +16,7 @@ class _HTMLSanitizer(_BaseHTMLProcessor):
         'h2', 'h3', 'h4', 'h5', 'h6', 'hr', 'i', 'img', 'input', 'ins',
         'keygen', 'kbd', 'label', 'legend', 'li', 'm', 'map', 'menu', 'meter',
         'multicol', 'nav', 'nextid', 'ol', 'output', 'optgroup', 'option',
-        'p', 'pre', 'progress', 'q', 's', 'samp', 'section', 'select',
+        'output', 'p', 'pre', 'progress', 'q', 's', 'samp', 'section', 'select',
         'small', 'sound', 'source', 'spacer', 'span', 'strike', 'strong',
         'sub', 'sup', 'table', 'tbody', 'td', 'textarea', 'time', 'tfoot',
         'th', 'thead', 'tr', 'tt', 'u', 'ul', 'var', 'video', 'noscript'])
@@ -66,7 +66,7 @@ class _HTMLSanitizer(_BaseHTMLProcessor):
       'pointer', 'purple', 'red', 'right', 'solid', 'silver', 'teal', 'top',
       'transparent', 'underline', 'white', 'yellow'])
 
-    valid_css_values = re.compile(r'^(#[0-9a-f]+|rgb\(\d+%?,\d*%?,?\d*%?\)?|' +
+    valid_css_values = re.compile(r'^(#[0-9a-f]+|rgb\([\d.]+%?,[\d.]*%?,?[\d.]*%?\)?|' +
       r'\d{0,2}\.?\d{0,2}(cm|em|ex|in|mm|pc|pt|px|%|,|\))?)$')
 
     mathml_elements = set([
@@ -225,7 +225,7 @@ class _HTMLSanitizer(_BaseHTMLProcessor):
       'font-face', 'font-face-name', 'font-face-src', 'g', 'glyph', 'hkern',
       'linearGradient', 'line', 'marker', 'metadata', 'missing-glyph', 'mpath',
       'path', 'polygon', 'polyline', 'radialGradient', 'rect', 'set', 'stop',
-      'svg', 'switch', 'text', 'title', 'tspan', 'use'])
+      'svg', 'switch', 'symbol', 'text', 'title', 'tspan', 'use'])
 
     # svgtiny + class + opacity + offset + xmlns + xmlns:xlink
     svg_attributes = set(['accent-height', 'accumulate', 'additive', 'alphabetic',
@@ -239,7 +239,7 @@ class _HTMLSanitizer(_BaseHTMLProcessor):
        'horiz-origin-x', 'id', 'ideographic', 'k', 'keyPoints', 'keySplines',
        'keyTimes', 'lang', 'mathematical', 'marker-end', 'marker-mid',
        'marker-start', 'markerHeight', 'markerUnits', 'markerWidth', 'max',
-       'min', 'name', 'offset', 'opacity', 'orient', 'origin',
+       'min', 'name', 'offset', 'opacity', 'orient', 'origin', 'overflow',
        'overline-position', 'overline-thickness', 'panose-1', 'path',
        'pathLength', 'points', 'preserveAspectRatio', 'r', 'refX', 'refY',
        'repeatCount', 'repeatDur', 'requiredExtensions', 'requiredFeatures',
